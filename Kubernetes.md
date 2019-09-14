@@ -1,8 +1,17 @@
 docker build -t py-web-server .
 docker run -d py-web-server
 
+## Dockerfile
+- The docker build command builds an image from a Dockerfile and a context.
 
+```
+FROM ubuntu:18.04
+COPY . /app
+RUN make /app
+CMD python /app/app.py
+```
 
+- This Dockerfile contains four commands, each of which creates a layer. The FROM statement starts out by creating a layer from the **ubuntu:18.04 image**. The COPY command adds some files from your Docker client’s current directory. The RUN command builds your application using the make command. Finally, the last layer specifies what command to run within the container.
 
 # first lab
 
