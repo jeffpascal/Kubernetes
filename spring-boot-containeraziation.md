@@ -94,6 +94,26 @@ gcloud help compute instances create
 2. sudo apt-get install default-jdk
 3. install docker https://docs.docker.com/v17.12/install/linux/docker-ce/debian/#install-docker-ce-1
 4. sudo apt-get install -y python3 python3-pip
+5. install docker-machine: https://docs.docker.com/machine/install-machine/
+```
+base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machin
+```
+6. create docker-machine https://docs.docker.com/machine/drivers/gce/
+
+- To create a machine instance, specify --driver google, the project ID and the machine name.
+```
+$ gcloud auth login
+$ docker-machine create --driver google --google-project PROJECT_ID vm01
+$ docker-machine create --driver google \
+  --google-project PROJECT_ID \
+  --google-zone us-central1-a \
+  --google-machine-type f1-micro \
+  vm02
+```
+
 4. mvn clean install
 
 
