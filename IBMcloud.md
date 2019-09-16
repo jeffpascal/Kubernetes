@@ -43,4 +43,11 @@ ibmcloud plugin list
 
 The plug-in is displayed in the results as container-registry.
 
+### Install the Kubernetes CLI (kubectl)
+
+Install the version of [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) that is the same [Kubernetes version for IBM Cloud Container Service](https://console.bluemix.net/docs/containers/cs_versions.html#cs_versions). Using an older kubectl with a newer server might produce validation errors.
+
+### Install Docker
+
+To locally build images and push them to your registry namespace, [install Docker](https://www.docker.com/community-edition#/download). The Docker CLI is used to build applications into images.
 
