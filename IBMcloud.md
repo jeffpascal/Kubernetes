@@ -1,4 +1,6 @@
 
+# Kubernetes course
+
 ## Set up environement
 
 ### Install the IBM Cloud command-line interface (CLI)
@@ -108,4 +110,42 @@ CGROUPS: control limits and monitoring of resources_
 - Controllers are responsible for instantiating the actual resource represented by any Kubernetes resource. These actual resources are what your app needs to allow it to run successfully.
 
 ![image](images/kubernetes-architecture.png)
+
+### Kubernetes resource model
+
+Kubernetes infrastructure defines a resource for every purpose. Each resource is monitored and processed by a Controller. When you define your app, it contains a collection of these resources. Controllers will then read this collection to build your app’s actual backing instances. Some of the resources that you might work with are described in the following list. For a complete list, see Kubernetes Concepts. In this course, you will only use a few of these resources, such as pod and deployment.
+
+```
+Config maps: holds configuration data for pods to consume
+Daemon sets: ensures that each node in the cluster runs this pod
+Deployments: defines a desired state of a deployment object
+Events: provides life cycle events on pods and other deployment objects
+Endpoints: allows an inbound connections to reach the cluster services
+Ingress: a collection of rules that allows inbound connections to reach the cluster services
+Jobs: creates one or more pods and when they complete successfully, the job is marked as completed
+Node: a worker machine in Kubernetes
+Namespaces: multiple virtual clusters backed by the same physical cluster
+Pods: the smallest deployable units of computing that can be created and managed in Kubernetes
+Persistent volumes: provides an API for users and administrators to abstract details about how storage is provided from how it is consumed
+Replica sets: ensures that a specified number of pod replicas are running at any given time
+Secrets: holds sensitive information, such as passwords, OAuth tokens, and SSH keys
+Service accounts: provides an identity for processes that run in a pod
+Services: an abstraction that defines a logical set of pods and a policy by which to access them, sometimes called a microservice
+Stateful sets: the workload API object that manages stateful applications
+```
+
+![image](images/kubernetes-resource-model.png)
+
+
+### Key resources and pods
+
+A pod is the smallest object model that you can create and run. You can add labels to a pod to identify a subset to run operations on. When you are ready to scale your app, you can use the label to tell Kubernetes which Pod you need to scale. A pod typically represents a process in your cluster. Pods contain at least one container that runs the job and additionally might have other containers in it called sidecars for monitoring, logging, and so on. Essentially, a pod is a group of containers.
+
+An app is typically a group of pods. Although an entire app can be run in a single pod, you usually build multiple pods that talk to each other to make a useful app. In this course, you’ll see why separating the app logic and back-end database into separate pods scales better when you build an app.
+
+Kubernetes provides a client interface through the kubectl command-line interface. Kubectl commands allow you to manage your apps and manage cluster and cluster resources by modifying the model in the data store.
+
+You directly manipulate resources through YAML, which is a human-readable serialization language:
+
+$ kubectl (create|get|apply|delete) -f myResource.yaml
 
