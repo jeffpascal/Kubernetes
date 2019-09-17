@@ -107,5 +107,5 @@ CGROUPS: control limits and monitoring of resources_
 
 - Controllers are responsible for instantiating the actual resource represented by any Kubernetes resource. These actual resources are what your app needs to allow it to run successfully.
 
-![image](images/kubernetes-architecture)
+![image](images/kubernetes-architecture.png)
 
