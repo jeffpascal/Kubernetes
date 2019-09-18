@@ -1,3 +1,15 @@
+# Cloud
+
+- Cloud is the process of virtualizing the resources (at first there was the VM)
+- Containers are the next step of virtualizing resources (much nimbler and smaller, no need for snapshotting the OS)
+  - put a little bit of libraries, kernel and then the hypervisor
+
+## Kubernetes
+
+- Helm (.yaml) to tell kubernetes what an app is (types of storage and more)
+- Hierarchy : there is a Master and different Nodes (workers).  (Master can be a VM and nodes as well, but we should get used to calling them master and nodes)
+
+![alt](images/master-node.PNG)
 
 ## There are a few major types of models used for cloud computing:
 
