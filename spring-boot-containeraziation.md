@@ -113,8 +113,8 @@ $ docker-machine create --driver google \
   --google-machine-type f1-micro \
   vm02
 ```
+7. mvn clean install docker:build -Ddocker.host=$DOCKER_HOST
 
-4. mvn clean install
 
 
 
