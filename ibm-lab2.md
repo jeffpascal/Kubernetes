@@ -8,6 +8,7 @@
 ## Scale apps with replicas
 
 ```
+
 A replica is how Kubernetes accomplishes scaling out a deployment. A replica is a copy of a pod that already contains a running service. By having multiple replicas of a pod, you can ensure your deployment has the available resources to handle increasing load on your app.
 
 Update the replica set:
@@ -184,7 +185,7 @@ kubectl rollout undo deployment/<name-of-deployment>
 
 ## Check the health of apps
 
-``
+```
 Kubernetes uses availability checks (liveness probes) to know when to restart a container. For example, liveness probes can catch a deadlock where an app is running but be unable to make progress. Restarting a container in such a state can help to make the app more available despite the bugs.
 
 Also, Kubernetes uses readiness checks to know when a container is ready to start accepting traffic. A pod is considered ready when all of its containers are ready. One use of this check is to control which pods are used as back ends for services. When a pod is not ready, it is removed from the load balancers.
@@ -219,4 +220,4 @@ In the Pods section, you can see how many times the pods are restarted when the 
 
 You might happen to catch errors in the dashboard, indicating that the health check caught a problem. Wait a few minutes and refresh again. You see the number of restart changes for each pod.
 
-``
+```
