@@ -1,3 +1,8 @@
+- [Lab 2: Scale and update apps: Services, replica sets, and health checks current chapter](#lab-2-scale-and-update-apps-services-replica-sets-and-health-checks-current-chapter)
+  - [Scale apps with replicas](#scale-apps-with-replicas)
+  - [Update and roll back apps](#update-and-roll-back-apps)
+  - [Check the health of apps](#check-the-health-of-apps)
+
 # Lab 2: Scale and update apps: Services, replica sets, and health checks current chapter
 
 ## Scale apps with replicas

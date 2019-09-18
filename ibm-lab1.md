@@ -1,6 +1,12 @@
+- [Lab1](#lab1)
+  - [Push an image to IBM Cloud Container Registry](#push-an-image-to-ibm-cloud-container-registry)
+
+
 # Lab1
 
 ## Push an image to IBM Cloud Container Registry
+
+```
 You use the IBM Cloud Container Registry to push or pull an image.
 
 Clone or download the GitHub repository associated with this course.
