@@ -1,4 +1,12 @@
 
+- [using kubernetes](#using-kubernetes)
+  - [Monitoring and Health Checks](#monitoring-and-health-checks)
+    - [Creating Pods with Liveness and Readiness Probes](#creating-pods-with-liveness-and-readiness-probes)
+    - [Readiness Probes](#readiness-probes)
+    - [Liveness Probes](#liveness-probes)
+  - [Services](#services)
+    - [Creating a Service](#creating-a-service)
+
 # using kubernetes
 
 - clone https://github.com/kelseyhightower/app
