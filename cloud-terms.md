@@ -11,6 +11,30 @@
 
 ![alt](images/master-node.PNG)
 
+- all of this forms a cluster
+
+![alt](images/master-node-cluster.PNG)
+
+- the master is in charge of all nodes (the cluster) and makes all the decisions about which nodes
+
+### The master has multiple components
+
+- APIserver
+- Schedulin
+- Scheduler
+- rest services
+- replication controller
+- etcd *its the database of kubernetes. it tells kubernetes whose available? whats the state of all resources*
+    - **can also be called the state of Kubernetes**
+
+- inside of *nodes* we have *pods* , and the pod could have *container1 and container2*. We can have multiple pods in the same **node**
+
+#### How 
+    - we feed a .yaml to the master node, 
+    - the yaml file defines the state that we want want (etcd)
+      - if the state says i want pod 1 to be running and pod 1 fails
+      - the master is responsible for creating the new pod and scheduling it onto some other available node(a replica of the same pod)
+
 ## There are a few major types of models used for cloud computing:
 
 1. 1Infrastructure as a service (IaaS)
