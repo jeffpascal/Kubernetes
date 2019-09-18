@@ -34,7 +34,7 @@ Clients can:
     - No data is lost if the client's computer breaks because data is in the cloud.
     - The service is able to dynamically scale to usage needs.
 
-### Simply put
+#### Simply put
 
 - IaaS enables IT infrastructure (servers, virtual machines, storage, networks, and operating systems) to be leased from a cloud provider with a payment system as clients use it.
 
@@ -43,3 +43,12 @@ Clients can:
 - SaaS is a method of delivering software for applications through the Internet on demand, and usually on a subscription basis.
 
 ![alt](images/cloud-terms-services.PNG)
+
+### Anything as a service
+
+It's interesting to note that you might hear mention of a new model positioned as "anything as a service" and commonly referred to as XaaS. This model handles any IT service hosted on a provider's infrastructure that is remotely available over a network. This could include:
+
+- Data as a service (DaaS)
+- Storage as a service (STaaS)
+- Communication as a service (CaaS)
+- Business process as a service (BPaaS)
