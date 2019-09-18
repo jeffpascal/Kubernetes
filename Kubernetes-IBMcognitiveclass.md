@@ -1,3 +1,19 @@
+- [Kubernetes course](#kubernetes-course)
+  - [Set up environement](#set-up-environement)
+    - [Install the IBM Cloud command-line interface (CLI)](#install-the-ibm-cloud-command-line-interface-cli)
+    - [Install the IBM Cloud Kubernetes Service plug-in](#install-the-ibm-cloud-kubernetes-service-plug-in)
+    - [Install the IBM Cloud Container Registry plug-in](#install-the-ibm-cloud-container-registry-plug-in)
+    - [Install the Kubernetes CLI (kubectl)](#install-the-kubernetes-cli-kubectl)
+    - [Install Docker](#install-docker)
+  - [Provision a cluster](#provision-a-cluster)
+  - [Containers](#containers)
+  - [Kubernetes](#kubernetes)
+    - [Kubernetes, open-sourced orchestration](#kubernetes-open-sourced-orchestration)
+    - [Kubernetes architecture](#kubernetes-architecture)
+    - [Kubernetes resource model](#kubernetes-resource-model)
+    - [Key resources and pods](#key-resources-and-pods)
+    - [Kubernetes app deployment workflow](#kubernetes-app-deployment-workflow)
+
 
 # Kubernetes course
 
@@ -27,21 +43,6 @@ The plug-in is displayed in the results as container-service.
 
 ### Install the IBM Cloud Container Registry plug-in
 
-- [Kubernetes course](#kubernetes-course)
-  - [Set up environement](#set-up-environement)
-    - [Install the IBM Cloud command-line interface (CLI)](#install-the-ibm-cloud-command-line-interface-cli)
-    - [Install the IBM Cloud Kubernetes Service plug-in](#install-the-ibm-cloud-kubernetes-service-plug-in)
-    - [Install the IBM Cloud Container Registry plug-in](#install-the-ibm-cloud-container-registry-plug-in)
-    - [Install the Kubernetes CLI (kubectl)](#install-the-kubernetes-cli-kubectl)
-    - [Install Docker](#install-docker)
-  - [Provision a cluster](#provision-a-cluster)
-  - [Containers](#containers)
-  - [Kubernetes](#kubernetes)
-    - [Kubernetes, open-sourced orchestration](#kubernetes-open-sourced-orchestration)
-    - [Kubernetes architecture](#kubernetes-architecture)
-    - [Kubernetes resource model](#kubernetes-resource-model)
-    - [Key resources and pods](#key-resources-and-pods)
-    - [Kubernetes app deployment workflow](#kubernetes-app-deployment-workflow)
 
 Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
 
