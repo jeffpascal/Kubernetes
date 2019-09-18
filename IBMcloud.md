@@ -149,3 +149,15 @@ You directly manipulate resources through YAML, which is a human-readable serial
 
 $ kubectl (create|get|apply|delete) -f myResource.yaml
 
+### Kubernetes app deployment workflow
+
+![image](images/kubernetes-deployement-workflow.png)
+
+1. The user deploys a new app by using the kubectl CLI. Kubectl sends the request to the API server.
+2. The API server receives the request and stores it in the data store (etcd). After the request is written to the data store, the API server is done with the request.
+3. Watchers detect the resource changes and send notifications to the Controller to act on those changes.
+4. The Controller detects the new app and creates new pods to match the desired number of instances. Any changes to the stored model will be used to create or delete pods.
+5. The Scheduler assigns new pods to a node based on specific criteria. The Scheduler decides on whether to run pods on specific nodes in the cluster. The Scheduler modifies the model with the node information.
+6. A Kubelet on a node detects a pod with an assignment to itself and deploys the requested containers through the container runtime, for example, Docker. Each node watches the storage to see what pods it is assigned to run. The node takes necessary actions on the resources assigned to it such as to create or delete pods.
+7. Kubeproxy manages network traffic for the pods, including service discovery and load balancing. Kubeproxy is responsible for communication between pods that want to interact.
+
