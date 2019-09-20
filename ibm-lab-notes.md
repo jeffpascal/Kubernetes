@@ -1,3 +1,14 @@
+- [IBMCloud](#ibmcloud)
+  - [Setting up the environement](#setting-up-the-environement)
+    - [Install IBM Cloud CLI](#install-ibm-cloud-cli)
+    - [Log in to IBMCloud CLI](#log-in-to-ibmcloud-cli)
+    - [Install the IBM Cloud Kubernetes Service plug-in](#install-the-ibm-cloud-kubernetes-service-plug-in)
+    - [Install the IBM Cloud Container Registry plug-in](#install-the-ibm-cloud-container-registry-plug-in)
+    - [Install the Kubernetes CLI (kubectl)](#install-the-kubernetes-cli-kubectl)
+    - [Install Docker](#install-docker)
+  - [Provision a cluster](#provision-a-cluster)
+  - [Set up and deploy an app](#set-up-and-deploy-an-app)
+
 # IBMCloud
 
 ## Setting up the environement
