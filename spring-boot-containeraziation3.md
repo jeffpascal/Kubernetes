@@ -59,7 +59,8 @@ ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
 - Get the command to set the environment variable and download the Kubernetes configuration files:
 ```ibmcloud cs cluster-config <cluster_name_or_ID>```
     - this needs to be done if you have access denied error
-non-depracated version : ```ibmcloud ks cluster config mycluster```
+
+- non-depracated version : ```ibmcloud ks cluster config mycluster```
 - a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable
 - set the KUBECONFIG environment variable.
 
