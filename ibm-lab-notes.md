@@ -75,7 +75,6 @@
 9. ```ibmcloud cs clusters``` to make sure the cluster is in Normal state
 10. ```ibmcloud cs workers <yourclustername>``` make sure all workers are in Normal state with Ready status
 
- 173.193.92.31 public ip
 
 ### Deploy your application
 
@@ -83,6 +82,7 @@
 
 - Get the command to set the environment variable and download the Kubernetes configuration files:
 ```ibmcloud cs cluster-config <cluster_name_or_ID>```
+    - this needs to be done if you have access denied error
 non-depracated version : ```ibmcloud ks cluster config mycluster```
 - a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable
 - set the KUBECONFIG environment variable.
@@ -96,7 +96,7 @@ non-depracated version : ```ibmcloud ks cluster config mycluster```
 
 #### Expose that deployment as a service
 
-- kubectl expose deployment/hello-world --type="NodePort" --port=8080
+- ```kubectl expose deployment/hello-world --type="NodePort" --port=8080```
 - Find the port that is used on that worker node and examine your new service
 ```kubectl describe service <name-of-deployment>```
 
