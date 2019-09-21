@@ -1,16 +1,16 @@
 
 - [Download](#download)
   - [Clone project](#clone-project)
-  - [Build the docker file](#build-the-docker-file)
+- [Build the docker file](#build-the-docker-file)
   - [Check cluster](#check-cluster)
-  - [Set up environement variable and download configuration files](#set-up-environement-variable-and-download-configuration-files)
+- [Set up environement variable and download configuration files](#set-up-environement-variable-and-download-configuration-files)
   - [Expose that deployment as a service](#expose-that-deployment-as-a-service)
-    - [Cleaning up](#cleaning-up)
-  - [Expose deployment](#expose-deployment)
+- [Cleaning up](#cleaning-up)
+- [Expose deployment](#expose-deployment)
   - [Get details of deployment](#get-details-of-deployment)
-    - [Clean up](#clean-up)
-    - [Get all services](#get-all-services)
-    - [Delete a service](#delete-a-service)
+- [Clean up](#clean-up)
+  - [Get all services](#get-all-services)
+  - [Delete a service](#delete-a-service)
 - [Scale apps with replicas](#scale-apps-with-replicas)
   - [Update the replica set](#update-the-replica-set)
 
@@ -41,7 +41,7 @@ ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
 - EXPOSE expose the port 8085
 - run the command to run the jar. ```java -jar ./target/docker-spring-boot.jar```  and you need to execute it in the container
 
-### Build the docker file
+## Build the docker file
 
 1. ```docker build --tag us.icr.io/jeffpascalnamespace/spring-app .```
 
@@ -54,7 +54,7 @@ ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
 2. ```ibmcloud cs workers <yourclustername>```
    - note public ip address
 
-### Set up environement variable and download configuration files
+## Set up environement variable and download configuration files
 
 - Get the command to set the environment variable and download the Kubernetes configuration files:
 ```ibmcloud cs cluster-config <cluster_name_or_ID>```
@@ -63,7 +63,7 @@ non-depracated version : ```ibmcloud ks cluster config mycluster```
 - a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable
 - set the KUBECONFIG environment variable.
 
-### Run your image as deployement
+## Run your image as deployement
 
 - Run your image as a deployment:
 ```kubectl run <app-name> --image=us.icr.io/<namespace>/<app-name>```
@@ -79,11 +79,11 @@ non-depracated version : ```ibmcloud ks cluster config mycluster```
 ```ibmcloud cs workers <name-of-cluster>```
 
 
-#### Cleaning up
+## Cleaning up
 
 - delete deployment ```kubectl delete deployment <app-name>```
 
-### Expose deployment
+## Expose deployment
 
 - ```kubectl expose deployment/spring-app --type="NodePort" --port=8085```
   - You can now access your container/service by using curl <public-IP>:<nodeport> (or a web browser).
@@ -93,13 +93,13 @@ non-depracated version : ```ibmcloud ks cluster config mycluster```
 - ```kubectl describe service spring-app```
   - note NodePort
 
-#### Clean up
+## Clean up
 
-#### Get all services
+### Get all services
 
 - ```kubectl describe services```
 
-#### Delete a service
+### Delete a service
 
 - ```kubectl delete service spring-app```
 
