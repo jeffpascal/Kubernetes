@@ -46,7 +46,7 @@ ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
   
 ```kubectl delete deployment spring-app```
 
-- delete service
+- delete services
 
 ```kubectl delete service spring-app```
 
