@@ -15,6 +15,12 @@
   - [Scale and update apps Services/replica sets/health-checks](#scale-and-update-apps-servicesreplica-setshealth-checks)
     - [Scale apps with replicas](#scale-apps-with-replicas)
       - [Update the replica set](#update-the-replica-set)
+    - [Update and roll back](#update-and-roll-back)
+      - [update deployment](#update-deployment)
+      - [check status](#check-status)
+      - [confirm new code is up with curl <public-IP>:<nodeport>](#confirm-new-code-is-up-with-curl-public-ipnodeport)
+        - [Undo latest rollout](#undo-latest-rollout)
+    - [Check health of apps](#check-health-of-apps)
 
 # IBMCloud
 
@@ -146,5 +152,85 @@ non-depracated version : ```ibmcloud ks cluster config mycluster```
 
 ![alt](images/kluster-high-availability.PNG)
 
+### Update and roll back
 
+- ensure that you have the image tagged with 1 and pushed
+```
+docker build --tag us.icr.io/<namespace>/hello-world:1 .
+docker push us.icr.io/<namespace>/hello-world:1
+```
 
+- make a change to the code
+```
+docker build --tag us.icr.io/<namespace>/hello-world:2
+docker push us.icr.io/<namespace>/hello-world:2
+```
+
+#### update deployment
+
+- Using kubectl, update your deployment to use the latest image. You can do this in two ways:
+- Edit the YAML file again by using 
+```kubectl edit deployment/<name-of-deployment>```
+- Specify a new image by using a single command. Using a single command is especially useful when writing deployment automation. To specify the new image, run this command:
+```kubectl set image deployment/hello-world hello-world=us.icr.io/<namespace>/hello-world:2```
+
+#### check status
+```
+kubectl rollout status deployment/<name-of-deployment>
+kubectl get replicasets
+```
+
+#### confirm new code is up with curl <public-IP>:<nodeport>
+
+##### Undo latest rollout
+
+kubectl rollout undo deployment/hellow
+
+### Check health of apps
+
+- kubectl apply -f healthcheck.yml
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw-demo-deployment
+spec:
+  selector:
+    matchLabels:
+      run: hw-demo-health
+      test: hello-world-demo
+  replicas: 3
+  template:
+    metadata:
+      name: pod-liveness-http
+      labels:
+        run: hw-demo-health
+        test: hello-world-demo
+    spec:
+      containers:
+        - name: hw-demo-container
+          image: "us.icr.io/jeffpascalnamespace/hello-world:3"
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hw-demo-service
+  labels:
+    run: hw-demo-health
+spec:
+  type: NodePort
+  selector:
+    run: hw-demo-health
+  ports:
+   - protocol: TCP
+     port: 8080
+     nodePort: 30072
+```
