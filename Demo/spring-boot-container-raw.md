@@ -5,7 +5,7 @@
 ```
 FROM openjdk:8
 ADD target/docker-spring-boot.jar docker-spring-boot.jar
-EXPOSE 8085
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
 ```
 4. ```docker build --tag us.icr.io/jeffpascalnamespace/spring-app .```
