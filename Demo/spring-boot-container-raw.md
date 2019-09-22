@@ -1,3 +1,5 @@
+# Main
+
 1. git clone https://github.com/jeffpascal/Spring-and-springboot.git
    1. git clone --single-branch --branch demo https://github.com/jeffpascal/Spring-and-springboot.git
 2. mvn clean install
@@ -18,11 +20,12 @@ ENTRYPOINT ["java", "-jar","docker-spring-boot.jar"]
 10. ```kubectl get pods```
 11. ```kubectl expose deployment/spring-app --type="NodePort" --port=8080```
 12. ```kubectl describe services```
-13. ```docker build --tag us.icr.io/jeffpascalnamespace/spring-app:1 .```
-14. ```docker push us.icr.io/jeffpascalnamespace/spring-app:2```
-15. ```kubectl edit deployment/spring-app```
-16. ```kubectl rollout status deployment/spring-app```
-17. ```kubectl get replicasets```
+13. scale ```kubectl edit deployment/spring-app```
+14. ```docker build --tag us.icr.io/jeffpascalnamespace/spring-app:1 .```
+15. ```docker push us.icr.io/jeffpascalnamespace/spring-app:2```
+16. ```kubectl edit deployment/spring-app```
+17. ```kubectl rollout status deployment/spring-app```
+18. ```kubectl get replicasets```
 
 ## Controls
 
