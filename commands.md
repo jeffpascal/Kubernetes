@@ -1,3 +1,9 @@
+## Useful commands
+
+- docker --help | grep -i images
+- look into the docker help page and sort the word images. -i means case insensitive
+
+
 first lab:
 
 cd /kickstart
