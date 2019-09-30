@@ -27,6 +27,16 @@
 ![alt](images/master-node-cluster.PNG)
 
 - the master is in charge of all nodes (the cluster) and makes all the decisions about which nodes
+- [Cloud](#cloud)
+  - [Kubernetes](#kubernetes)
+    - [The master has multiple components](#the-master-has-multiple-components)
+      - [How](#how)
+  - [There are a few major types of models used for cloud computing:](#there-are-a-few-major-types-of-models-used-for-cloud-computing)
+    - [Infrastructure as a service](#infrastructure-as-a-service)
+    - [Platform as a service](#platform-as-a-service)
+    - [Software as a service](#software-as-a-service)
+      - [Simply put](#simply-put)
+    - [Anything as a service](#anything-as-a-service)
 
 ### The master has multiple components
 

@@ -1,3 +1,21 @@
+- [intro](#intro)
+  - [Create cluster called bootcamp with 5 nodes](#create-cluster-called-bootcamp-with-5-nodes)
+- [Learn about Deployment Objects](#learn-about-deployment-objects)
+  - [Run the explain command in kubectl to tell you about the deployment object.](#run-the-explain-command-in-kubectl-to-tell-you-about-the-deployment-object)
+  - [Create a Deployment](#create-a-deployment)
+- [Scale a Deployment](#scale-a-deployment)
+- [Rolling updates](#rolling-updates)
+- [Pause a Rolling update](#pause-a-rolling-update)
+- [Resuming a Rolling Update](#resuming-a-rolling-update)
+- [Rollback an Update](#rollback-an-update)
+- [Canary Deployments](#canary-deployments)
+  - [Session affinity for Canary Deployments to give users the same kind of version every time](#session-affinity-for-canary-deployments-to-give-users-the-same-kind-of-version-every-time)
+- [Blue-Green Deployments](#blue-green-deployments)
+  - [The service](#the-service)
+  - [Create a blue-green deployment](#create-a-blue-green-deployment)
+  - [Roll-back a blue-green deployment](#roll-back-a-blue-green-deployment)
+- [Use the Web UI](#use-the-web-ui)
+
 ## intro
 
 - You can list the active account name with this command:

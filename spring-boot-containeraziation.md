@@ -1,5 +1,11 @@
 
-## how to install apt-get
+## how to in- [how to install apt-get](#how-to-install-apt-get)
+- [how to in- how to install apt-get](#how-to-in--how-to-install-apt-get)
+- [How to make a Spring-boot container](#how-to-make-a-spring-boot-container)
+  - [Verify if 32 or 64 bit server](#verify-if-32-or-64-bit-server)
+  - [Download gcloud for your os version](#download-gcloud-for-your-os-version)
+  - [Extract the linux archive](#extract-the-linux-archive)
+  - [Install gcloud](#install-gcloud)
 ``
 Search the appropriate version of apt from here (apt_1.4_amd64.deb for ubuntu xenial)
 
